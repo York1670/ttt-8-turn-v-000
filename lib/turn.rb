@@ -13,35 +13,3 @@ end
 def move(board, index, value = "X")
   board[index] = value
 end
-
-def valid_move?(board, index)
-  def position_taken?(board, index)
-    if board[index] == " " || board[index] == "" || board[index] == nil
-      return false
-    else
-      return true
-    end
-  end
-
-  if index.between?(0,8)
-    return !position_taken?(board, index)
-  else
-    return false
-  end
-
-end
-
-def turn(board)
-
-  puts "Please enter 1-9:"
-  user_input = gets.strip
-  index = input_to_index(user_input)
-
-  until valid_move?(board, index) == true
-    puts "Please enter 1-9:"
-    user_input = gets.strip
-    index = input_to_index(user_input)
-    puts move(board, index, value = "X")
-  end
-
-end
